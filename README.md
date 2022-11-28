@@ -1,4 +1,4 @@
-# C_Text_Game_1
+# C_Slider_Game_1
 Class Project CXX Slider game 1
 GAME! YAYY
 The goal is to move the star '*' to the Exit 'E'.
