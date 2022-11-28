@@ -3,15 +3,15 @@
 #include <stdlib.h>
 #include <math.h>
 
-int lvlSelect(void);
-int lvlPlay(char lvlS);
-void lvlFinish(int Score);
-void Update(char Level[][18]);
-int Move(char Level[][18],int Star[], char inpt, bool update);
-char Complete(char Level[][18], int Star[], int End[], char inpt);
-void lvlGenerate(int lvlS, char Level[][18], int Star[], int End[]);
-char Prompt(char inpt);
-bool randomCheck(char Level[][18], int Star[], int End[]);
+int lvlSelect(void); // user selects 1, 2, or 3
+int lvlPlay(char lvlS); // Starts level 1, 2, or 3
+void lvlFinish(int Score); // Finishes level, returns to main, and displays score
+void Update(char Level[][18]); // Reprints the level after a change occurs
+int Move(char Level[][18],int Star[], char inpt, bool update); // Moves the star, returns the score
+char Complete(char Level[][18], int Star[], int End[], char inpt); // End of each level
+void lvlGenerate(int lvlS, char Level[][18], int Star[], int End[]); // Generates the level, either from text or randomly
+char Prompt(char inpt); // Prompts the user input so that the text is not copied and pasted
+bool randomCheck(char Level[][18], int Star[], int End[]); // Makes sure that the level is able to be completed
 
 int main()
 {
