@@ -29,16 +29,16 @@ int lvlSelect(void)
 	do
 	{
 	printf("\n\nPlease select a level to play:");
-	printf("\nCastle (1)\nOcean (2)\nRandom (3)\n");
+	printf("\nCastle (1)\nOcean (2)\nLava(3)\nRandom (4)\n");
 	printf("-->  ");
 	scanf(" %c",&lvlS);
 	printf(" ");
-	if (lvlS != '1' && lvlS != '2' && lvlS != '3')
+	if (lvlS != '1' && lvlS != '2' && lvlS != '3' && lvlS != '4')
 	{
-		printf("\nType a number between 1 and 3!");
+		printf("\nType a number between 1 and 4!");
 	}
 	
-	} while(lvlS != '1' && lvlS != '2' && lvlS != '3');
+	} while(lvlS != '1' && lvlS != '2' && lvlS != '3' && lvlS != '4');
 	
 	return lvlS;
 }
@@ -149,6 +149,56 @@ int lvlPlay(char lvlS)
 		inpt = Complete(Level,Star,End,inpt);
 	}
 	else if (lvlS == '3')
+	{
+		system("Color 4F");
+		int Star[2];
+		int End[2];
+		lvlGenerate(16,Level,Star,End);
+		while (Level[End[0]][End[1]] == 'E')
+		{
+		inpt = Prompt(inpt);
+		Score = Score + Move(Level,Star,inpt,true);
+		}
+		printf("\n\nStage Complete!");
+		inpt = Complete(Level,Star,End,inpt);
+		
+		lvlGenerate(17,Level,Star,End);
+		while (Level[End[0]][End[1]] == 'E')
+		{
+		inpt = Prompt(inpt);
+		Score = Score + Move(Level,Star,inpt,true);
+		}
+		printf("\n\nStage Complete!");
+		inpt = Complete(Level,Star,End,inpt);
+
+		lvlGenerate(18,Level,Star,End);
+		while (Level[End[0]][End[1]] == 'E')
+		{
+		inpt = Prompt(inpt);
+		Score = Score + Move(Level,Star,inpt,true);
+		}
+		printf("\n\nStage Complete!");
+		inpt = Complete(Level,Star,End,inpt);
+
+		lvlGenerate(19,Level,Star,End);
+		while (Level[End[0]][End[1]] == 'E')
+		{
+		inpt = Prompt(inpt);
+		Score = Score + Move(Level,Star,inpt,true);
+		}
+		printf("\n\nStage Complete!");
+		inpt = Complete(Level,Star,End,inpt);
+
+		lvlGenerate(20,Level,Star,End);
+		while (Level[End[0]][End[1]] == 'E')
+		{
+		inpt = Prompt(inpt);
+		Score = Score + Move(Level,Star,inpt,true);
+		}
+		printf("\n\nStage Complete!");
+		inpt = Complete(Level,Star,End,inpt);
+	}
+	else if (lvlS == '4')
 	{
 		system("Color F0");
 		int Star[2] = {11,0};
@@ -455,6 +505,111 @@ void lvlGenerate(int lvlC, char Level[][18], int Star[], int End[])
 	if (lvlC == 15)
 	{
 		pointer = fopen("Level2.5.txt","r");
+		for (i=0;i<12;i++)
+		{
+				for (j=0;j<18;j++)
+				{
+					fscanf(pointer,"%c",&Level[i][j]);
+					if (Level[i][j] == 'E') 
+					{
+						End[0] = i;
+						End[1] = j;
+					}
+					else if (Level[i][j] == '*') 
+					{
+						Star[0] = i;
+						Star[1] = j;
+					}
+				}
+		}
+	}
+	if(lvlC == 16)
+	{
+		pointer = fopen("Level3.1.txt","r");
+		for (i=0;i<12;i++)
+		{
+				for (j=0;j<18;j++)
+				{
+					fscanf(pointer,"%c",&Level[i][j]);
+					if (Level[i][j] == 'E') 
+					{
+						End[0] = i;
+						End[1] = j;
+					}
+					else if (Level[i][j] == '*') 
+					{
+						Star[0] = i;
+						Star[1] = j;
+					}
+				}
+		}
+	}
+	if(lvlC == 17)
+	{
+		pointer = fopen("Level3.2.txt","r");
+		for (i=0;i<12;i++)
+		{
+				for (j=0;j<18;j++)
+				{
+					fscanf(pointer,"%c",&Level[i][j]);
+					if (Level[i][j] == 'E') 
+					{
+						End[0] = i;
+						End[1] = j;
+					}
+					else if (Level[i][j] == '*') 
+					{
+						Star[0] = i;
+						Star[1] = j;
+					}
+				}
+		}
+	}
+	if(lvlC == 18)
+	{
+		pointer = fopen("Level3.3.txt","r");
+		for (i=0;i<12;i++)
+		{
+				for (j=0;j<18;j++)
+				{
+					fscanf(pointer,"%c",&Level[i][j]);
+					if (Level[i][j] == 'E') 
+					{
+						End[0] = i;
+						End[1] = j;
+					}
+					else if (Level[i][j] == '*') 
+					{
+						Star[0] = i;
+						Star[1] = j;
+					}
+				}
+		}
+	}
+	if(lvlC == 19)
+	{
+		pointer = fopen("Level3.4.txt","r");
+		for (i=0;i<12;i++)
+		{
+				for (j=0;j<18;j++)
+				{
+					fscanf(pointer,"%c",&Level[i][j]);
+					if (Level[i][j] == 'E') 
+					{
+						End[0] = i;
+						End[1] = j;
+					}
+					else if (Level[i][j] == '*') 
+					{
+						Star[0] = i;
+						Star[1] = j;
+					}
+				}
+		}
+	}
+	if(lvlC == 20)
+	{
+		pointer = fopen("Level3.5.txt","r");
 		for (i=0;i<12;i++)
 		{
 				for (j=0;j<18;j++)
